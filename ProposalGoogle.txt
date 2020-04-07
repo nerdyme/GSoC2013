@@ -1,0 +1,94 @@
+﻿PACKET EDITOR FOR WIRESHARK - GSoC PROJECT 2013
+
+ABSTRACT
+
+Packet Editor in Wireshark is needed so that the incoming captured packets on a system can be edited, deleted, modified or resent to a destination. Wireshark UI lists all the captured packets such that we can open the packet till application layer and can see its contents. This functionality an be extended to the modification of packet data and other operations. The aim of this project is to add a User Interface which will pop up whenever user opens packet(s) and will contain all options. This can be achieved by designing a listener and UI for the Wireshark using GTK+ Widget toolkit, LUA scripts and writing custom dissectors.
+
+CONTENTS
+
+PERSONAL DETAILS :
+
+Name           :   Surbhi Jain
+Email ID       :   jainsurbhi024@gmail.com
+Contact No.  :   (+91)9718658816
+
+PROJECT PROPOSAL :
+
+The UI for packet editor prompts user to edit the protocol fields, can manipulate TCP fields, IP fields, Application Data and frame information. I have proposed a list of deliverables and expected timeline during the Google Summer of Code.
+  
+LIST OF DELIVERABLES :
+
+An user interface that will be able to have multiple functionalities which includes :
+
+1) Complete Interface code using GTK+ and C/C++ languages
+2) Interface integrated with the editcap functionalities
+3) LUA scripts 
+4) Listeners in C which will be called for each user action on interface buttons
+
+IMPLEMENTATION DETAILS :
+
+1) As initially we dont have any data for the medical reports,although we have some data for the logs,monthly logs,and for the order reports.So in order to get the data, we need to make some web based forms through which we can add information.We can get this information from the web and ICD-10 database as told by John sir.
+Web interface can be build using html/html5,java script Or jsp,here I can get help from Piyush Madan sir as he has done some work on front end development for the raxa. 
+                
+2.Now we already have database for all patients and logs in openMRS, plus the data we retrieved in above step. Now we can design any reports by creating the "Data sets" of the required data in BIRT.BIRT supports full java script functions which will be used for the formatting of text and to add dynamic content in our report.Example:if sugar level is less than value 'A' print, and some comment, and else print something else.This is controlled by javacripts function.For the layout design BIRT is awesome tools it supports everything like adding image ,Charts, Table,Grid,static text as well as dynamic text in its tool menu.   
+                
+3.Integration:Using birt.report.engine.api's we can integrate .rpt(report file) with java code ,can pass paranetrs.Adding the below code in jsp we can connect UI with report.
+For Example: 
+engine.openReportDesign("C:/harsh/WorkSpace/SampleReport/ReportDemo/barChart.rptdesign");  // choose the already built report to pass parameter and generate
+task.setParameterValue("uid", uid);                                                                                           // sets the parameter ,which will be passes from UI 
+option.setOutputFormat("pdf");                                                                                                //set the format type or output report
+option.setOutputFileName("C:/harsh/WorkSpace/SampleReport/" + student +".pdf");                      // name of output file
+         
+ Previous work on github : (clicke here) see : a. Report_Firstphase: Previously designed reports.
+                                                                    b.futorproject:  JDBC code to populate database tables for required data.   
+c.uploaded .png files,screenshots of reports.    
+
+Timeline:
+week 0 (time before starting of Gsoc): 
+I will daily go to raxa office will discuss the architecture of raxa project. Get involved with raxa system,its architecture and database at their office.Making a documentaion based on brainstorming sessions with the RAXA offiicials about the projects.Face to face disscussion on what exact database is needed, how should the interaface be for populating the required data for reports.     
+week 1-3:
+(Gsoc starts):I will start making form based web interface for entering the information needed in database using jsp/html and jdbc.will write jdbc code to populate data from existing openMrs table to report table.At the end, database tables will be prepared for reporting. 
+week 4-5:
+Discussion with mentor about the layout of report and start making reports, a report may take 3-4 days at the end of the 5th week i will have 4-5 reports. 
+week 6-7:
+Integrate the above reports through java and jsp with user interface.Report will be generated as pdf or html specified through user interface parameter.
+week 8: 
+Evaluation and based on user experience, making changes as desired, solving bugs and over all polishing the work done so far.At theend some reports will be prepared.
+week 9-10:
+Again report designing, here again at the end of 10th week i will have more 5 reports, at least, or may be more.
+week 11-12:
+Again Integrate the above reports through java and jsp with user interface.Report will be generated as pdf or html specified through user interface parameter.
+week 13: 
+Evaluation of work done so far by the mentor and end users.Again having the desired changes, bug fixing, making changes to user interface and reports and giving some final finishing to the project.At the end,RAXA system would be prepared to generate some more reports.
+week 14-15:
+Remaining report making and their integration(on demand).
+week 16 :
+Final evaluation of the project ,will make desired changes.
+Submit the project to google and RAXA.
+
+(GSOC ENDS)
+
+week 17 & futher more :
+I will continue to contribute in open source with raxa and other organisations.
+
+WORK EXPERIENCE :
+
+Last Summers, I had done training in “Network Management & Security” under “Nettech Pvt. Ltd.” where I have hosted live DNS, DHCP, MAIL, FTP protocol servers using webmin in Linux. I have worked on the configurations of random networks and configured many real-time networking scenarios. I have good knowledge of TCP/IP model, its architecture, headers and routing protocols. I have worked on "Cisco packet tracer" tool for simulating very large networks and configured router modes in CLI of IOS in routers. Packet editing needs the knowledge of the packet headers, interface designing and manipulation using C. I have good knowledge of C/C++  languages as I am an active participant on coding forums especially "Topcoder" and "Codechef". I have good knowledge of designing interfaces as I have designed a shopping website by scratch using purely CSS, JSP, XML and HTML. 
+
+I have given sessions on LAN configurations and Routing in my college for the purpose of distributing and exchanging maximum knowledge. I am currently engaged in learning more about networks.
+
+
+
+ACADEMIC EXPERIENCE :
+
+1)  I am studying in 3rd year pursuing Bachelors in Computer Science from USIT, Guru Gobind Singh Indraprastha University, Delhi, India. I have good academic background with an cumulative average of 86.66% in my last 5 semesters. I have been topper in my college among all departments in 1st and 4th semesters.
+
+2)  In my summer training results at “Nettech Pvt. Ltd.”, I have secured maximum marks among 90 students. Below is the link of results :  http://www.nettech.in/notice/summer/training/2012/ghaziabad/results-2012.html
+
+OTHER EXPERIENCE : 
+
+I have submitted my project for company “Nextgen” where I have hosted and configured live servers along with NFS, SAMBA sharing and security using Group and User management in Linux. 
+
+WHY PACKET EDITOR :
+
+Firstly, the idea itself intrigues me a lot. Packet editing is an amazing feature for Wireshark Software which assists user in editing and manipulating captured packets directly and send them to others users by editing simply the IP address in IP header. I believe this project would be best improvement in the tool with a lot of features and usability extensions.
